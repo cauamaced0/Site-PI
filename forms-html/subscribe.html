@@ -37,6 +37,16 @@
         input[type="number"] {
             -moz-appearance: textfield;
         }
+
+        .myTable {
+            width: 50%;
+            border: 1px solid #000;
+        }
+
+        .myTable tr,td,th {        
+            border: 1px solid #000;
+        }
+
     </style>
 
     <!-- =======================================================
@@ -98,12 +108,26 @@
           <div class="mb-3">
             <label for="genero" class="form-label">Genero</label>
             <input type="text" class="form-control" id="genero" placeholder="Digite seu genero" >
+            <span id="erro-genero" style="display: none;">Erro</span>
           </div>
+
+          <button  class="btn btn-danger" onclick="limpar()">Limpar tudo</button>
+
+          <button type="button" style="background-color: #dc3545;;" onclick="limparF(event)"  class="btn btn-success"  >Limpar Formulario</button>
 
           <button onclick="validar()"  class="btn btn-success">Enviar para a escola</button>
 
-          <button type="reset" class="btn btn-danger">Limpar</button>
+         
+
+          
+
         </form>
+      </div>
+      <span id="sucesso" style="display: none;"></span>
+      <div>
+          <table class="myTable" id="tabela">
+
+          </table>
       </div>
 
     <!-- Scroll Top -->
