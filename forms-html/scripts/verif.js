@@ -198,3 +198,58 @@ function limparF(event)
   document.getElementById('data').value = ''
   document.getElementById('genero').value = ''
 }
+
+function login()
+{
+  let email = document.getElementById('email').value
+  let senha = document.getElementById('senha').value
+  let correto = true
+  //valida email
+  if(email == ' ' || !email.includes('@') || !email.includes('.'))
+    {
+      let mensagem = document.getElementById('erro-email')
+      mensagem.style.display = 'Flex'
+      mensagem.innerText = 'Seu email está vazio, ou deve possuir um @ e um .'
+      mensagem.style.color = 'red'
+      correto = false
+    }
+    else
+    {
+      let mensagem = document.getElementById('erro-email')
+      mensagem.style.display = 'none'
+    }
+
+  //valida senha 
+  let regex =/(?=^.{8,}$)((?=.*\d)(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/g
+  if(!regex.test(senha))
+  {
+    let mensagem = document.getElementById('erro-senha')
+    mensagem.style.display = 'flex'
+    mensagem.innerText ='Sua senha deve ser mais que 8 caracteres, e deve possuir pelo menos um numero e caractere especial'
+    mensagem.style.color = 'red'
+    correto=false
+
+    let mensagem2 = document.getElementById('erro-senha2')
+    mensagem2.innerText = 'Exemplo: Banana456-'
+    mensagem2.style.display = 'flex'
+    mensagem2.style.color = 'red'
+  
+    
+  }
+  else
+  {
+    let mensagem = document.getElementById('erro-senha')
+    mensagem.style.display= 'none'
+
+    let mensagem2 = document.getElementById('erro-senha2')
+    mensagem2.style.display= 'none'
+
+  }
+  
+  if(correto==true)
+  {
+    window.location = "teacher-home.html"
+  }
+
+
+}
