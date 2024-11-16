@@ -203,7 +203,9 @@ function login()
 {
   let email = document.getElementById('email').value
   let senha = document.getElementById('senha').value
+  let nome = document.getElementById('nome').value
   let correto = true
+
   //valida email
   if(email == ' ' || !email.includes('@') || !email.includes('.'))
     {
@@ -245,6 +247,20 @@ function login()
     mensagem2.style.display= 'none'
 
   }
+  //valida nome
+  if(nome.trim() == '' || nome.length < 10)
+    {
+      let mensagem = document.getElementById('erro-nome')
+      mensagem.style.display = 'Flex'
+      mensagem.innerText = 'Seu nome está vazio ou possui menos que 10 caracteres'
+      mensagem.style.color = 'red'
+      correto = false
+    }
+    else
+    {
+      let mensagem = document.getElementById('erro-nome')
+      mensagem.style.display = 'none'
+    }
   
   if(correto==true)
   {

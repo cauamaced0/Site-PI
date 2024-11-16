@@ -1,41 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Notas</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
 
     <!-- Favicons -->
-    <link href="../assets/img/favicon.png" rel="icon">
-    <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="../assets/img/favicon.png" rel="icon" />
+    <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Vendor CSS Files -->
-    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="../assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="../assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/swiper/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Main CSS File -->
-    <link href="../assets/css/main.css" rel="stylesheet">
+    <link href="../assets/css/main.css" rel="stylesheet" />
     <style>
-        input[type="number"]::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-        }
+      input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
 
-        input[type="number"] {
-            -moz-appearance: textfield;
-        }
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+
+      input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+
+      .menu {
+        display: flex;
+        justify-content: center; /* Centraliza os itens horizontalmente */
+        align-items: center; /* Alinha os itens verticalmente */
+        gap: 20px; /* Espaçamento entre os botões */
+      }
+
+      .button {
+        text-decoration: none;
+        padding: 18px 15px;
+        color: #5fcf80;
+
+        border-radius: 5px;
+        text-align: center;
+        width: 200px;
+        font-size: 16px;
+        font-weight: bold;
+      }
     </style>
 
     <!-- =======================================================
@@ -45,55 +84,151 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-</head>
+  </head>
 
-<body class="index-page">
-
+  <body class="index-page">
     <header id="header" class="header d-flex align-items-center sticky-top">
-        <div class="container-fluid container-xl position-relative d-flex align-items-center">
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center"
+      >
+        <a href="../index.html" class="logo d-flex align-items-center me-auto">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <!-- <img src="assets/img/logo.png" alt=""> -->
+          <h1 class="sitename">Vanguarda</h1>
+        </a>
 
-            <a href="../index.html" class="logo d-flex align-items-center me-auto">
-                <!-- Uncomment the line below if you also wish to use an image logo -->
-                <!-- <img src="assets/img/logo.png" alt=""> -->
-                <h1 class="sitename">Vanguarda</h1>
-            </a>
-
-            <nav id="navmenu" class="navmenu">
-                <ul>
-                    <li><a href="teacher-home.html" class="active">Home<br></a></li>
-                    <li><a href="notes.html">Notas</a></li>
-                   
-                </ul>
-                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-            </nav>
-
-        </div>
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li>
+              <a id="a1" href="teacher-home.html" class="active">Home<br /></a>
+            </li>
+            <li><a id="a1" href="notes.html">Notas</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
     </header>
 
     <main>
-        <h1 class="text-center">Olá professor(a), seja bem-vindo!</h1>
-        <button onclick="validar()">a</button>
-        <table id="tabela">
+      <h1 class="text-center">Olá professor(a), seja bem-vindo!</h1>
 
-        </table>
+      <div class="menu">
+        <a href="#" class="button">Cadastrar alunos</a>
+        <a href="#" class="button">Lançar Notas</a>
+      </div>
+
+      <div class="text-center">
+        <h2>Cadastro de alunos:</h2>
+
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome do aluno</label>
+
+          <input
+            type="text"
+            class="form-control"
+            id="nome"
+            placeholder="Digite o nome do aluno"
+          />
+          <span id="erro-nome" style="display: none">Erro</span>
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">E-mail do aluno</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Digite o e-mail do aluno"
+          />
+          <span id="erro-email" style="display: none">Erro</span>
+        </div>
+
+        <div class="mb-3">
+          <label for="telefone" class="form-label">RA:</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="telefone"
+            placeholder="Digite o RA: do aluno"
+          />
+          <span id="erro-telefone" style="display: none">Erro</span>
+        </div>
+
+
+
+        <div class="mb-3">
+          <label for="serie" class="form-label">Série do aluno:</label>
+          <div>
+            <input type="radio" id="6ano" name="serie" value="6ano" />
+            <label for="6ano">6º Ano</label>
+          </div>
+          <div>
+            <input type="radio" id="7ano" name="serie" value="7ano" />
+            <label for="7ano">7º Ano</label>
+          </div>
+          <div>
+            <input type="radio" id="8ano" name="serie" value="8ano" />
+            <label for="8ano">8º Ano</label>
+          </div>
+          <div>
+            <input type="radio" id="9ano" name="serie" value="9ano" />
+            <label for="9ano">9º Ano</label>
+          </div>
+          <div>
+            <input type="radio" id="1ano" name="serie" value="1ano" />
+            <label for="9ano">1º Colegial</label>
+          </div>
+          <div>
+            <input type="radio" id="2ano" name="serie" value="3ano" />
+            <label for="9ano">2º Colegial</label>
+          </div>
+          <div>
+            <input type="radio" id="3ano" name="serie" value="3ano" />
+            <label for="9ano">3º Colegial</label>
+          </div>
+
+          <span id="erro-nome" style="display: none">Erro</span>
+        </div>
+
+      </div>
+
+
+
+
+
+      
+        <div class="mb-3">
+            <label for="ra" class="form-label">RA:</label>
+            <input type="number" class="form-control" id="ra" placeholder="00000000000" min="1">
+        </div>
+        <div class="mb-3">
+            <label for="disciplina" class="form-label">Código da disciplina</label>
+            <input type="number" class="form-control" id="disciplina" placeholder="00000000000" min="1">
+        </div>
+        <div class="mb-3">
+            <label for="nota" class="form-label">Nota</label>
+            <input type="number" class="form-control" id="nota" placeholder="0" min="0" step="any">
+        </div>
+
+        <button type="button" class="btn btn-success">Enviar dados</button>
+        
+        <div class="text-center">
+            <h2>Banco de dados:</h2>
+            <span id="erro-tabela">Nenhum aluno foi cadastrado:</span>
 
 
     </main>
 
     <!-- Scroll Top -->
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
-
-    <!-- Preloader -->
-    
-
-    <!-- Vendor JS Files -->
-    
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
 
     <!-- Main JS File -->
-   
+
     <script src="scripts/verif.js"></script>
-
-</body>
-
+  </body>
 </html>
