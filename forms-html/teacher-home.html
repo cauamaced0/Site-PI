@@ -75,6 +75,28 @@
         font-size: 16px;
         font-weight: bold;
       }
+
+      .text-center {
+    text-align: center;
+}
+
+.myTable {
+    width: 100%;
+    margin: 10px auto;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+.myTable th, .myTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.myTable th {
+    background-color: #f4f4f4;
+}
+
     </style>
     <script src="scripts/verif.js"></script>
     <!-- =======================================================
@@ -198,13 +220,13 @@
               <h2 id="notas">Lançar notas:</h2>
               <div>
                   <label for="ra" class="form-label">RA:</label>
-                  <input type="number" class="form-control" id="raN" placeholder="Digite o RA do aluno">
+                  <input type="text" class="form-control" id="raN" placeholder="Digite o RA do aluno">
                   <span id="raN1" style="display: none">Erro</span>
                   <span id="raN2" style="display: none">Erro</span>
               </div>
               <div >
-                  <label for="disciplina" class="form-label">Código da disciplina:</label>
-                  <input type="number" class="form-control" id="disciplina" placeholder="Digite o codigo da disciplina">
+                  <label for="disciplina" class="form-label">Nome da disciplina:</label>
+                  <input type="text" class="form-control" id="disciplina" placeholder="Digite o nome da disciplina">
                   <span id="erro-cod" style="display: none">Erro</span>
               </div>
               <div>
@@ -224,6 +246,12 @@
         <div class="text-center">
             <h2>Banco de dados:</h2>
             <span id="erro-tabela">Nenhum aluno foi cadastrado:</span>
+
+           
+            <table class="myTable" id="tabela">
+    
+             </table>
+         
         </div>
 
 

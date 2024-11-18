@@ -331,7 +331,7 @@ function validar2()
     }
 
     //valida email
-  if(vEmail == ' ' || !vEmail.includes('@') || !vEmail.includes('.'))
+  if(vEmail.trim() == ' ' || !vEmail.includes('@') || !vEmail.includes('.'))
     {
       let mensagem = document.getElementById('erro-email')
       mensagem.style.display = 'Flex'
@@ -361,7 +361,7 @@ function validar2()
   }
 
   //valida ra nota
-  if(Nra == ' ' || Nra.length < 11)
+  if(Nra.trim() == ' ' || Nra.length < 11)
   {
     let mensagem = document.getElementById('raN1')
     mensagem.style.display = 'flex'
@@ -392,11 +392,11 @@ function validar2()
   }
 
   //valida disciplina
-  if(cod = '' || cod.length < 11)
+  if(cod.trim() == '' || cod.length < 5)
   {
     let mensagem = document.getElementById('erro-cod')
     mensagem.style.display = 'flex'
-    mensagem.innerText = 'Seu codigo está vazio, ou ele deve possuir 11 caracteres'
+    mensagem.innerText = 'O nome da disciplina esta vazia, ou possui menos que 5 caracteres'
     mensagem.style.color = 'red'
     correto = false
   }
@@ -406,7 +406,7 @@ function validar2()
     mensagem.style.display = 'none'
   }
 
-  if(nota < 0 || nota == '' || nota >10)
+  if(nota < 0 || nota.trim() == '' || nota >10)
   {
     let mensagem = document.getElementById('erro-nt')
     mensagem.style.display = 'flex'
@@ -424,11 +424,63 @@ function validar2()
   //correto = true
   if(correto == true)
   {
+    //alunos
+    let vNome = document.getElementById('nome2').value
+    let vEmail = document.getElementById('email2').value
+    let vRa = document.getElementById('ra2').value
+    
+
+    let check;
+    let series = document.getElementsByName('serie');
+    for (let serie of series) {
+    if (serie.checked) {
+    check = serie.value;
+    break;
+  }
+}
+
+  //notas
+    let Nra = document.getElementById('raN').value
+    let cod = document.getElementById('disciplina').value
+    let nota = document.getElementById('nota').value
+
+
     let sucesso = document.getElementById('sucesso')
     sucesso.style.display = 'flex'
     sucesso.style.fontSize = '16px'
     sucesso.style.paddingLeft = '42.2%'
     sucesso.innerText = 'As informações foram cadastradas!'
+
+    let erroTab = document.getElementById('erro-tabela')
+    erroTab.style.display = 'none'
+
+
+    vAlunos.push({nome:vNome, email:vEmail, ra:vRa, ano:check, disciplina:cod,nota:nota})
+
+    let tab = document.getElementById('tabela')
+
+    let html = `<tr>
+                <th>Nome:</th>
+                <th>Email:</th>
+                <th>RA:</th>
+                <th>Ano:</th>
+                <th>Disciplina:</th>
+                <th>Nota:</th>
+                </tr>`
+
+    for(let objAluno of vAlunos)
+    {
+      html+=`<tr>
+            <td>${objAluno.nome}</td>
+             <td>${objAluno.email}</td>
+             <td>${objAluno.ra}</td>
+             <td>${objAluno.ano}</td>
+             <td>${objAluno.disciplina}</td>
+             <td>${objAluno.nota}</td>
+            </tr>`
+    }
+    tab.innerHTML = html
+
   }
 
   
