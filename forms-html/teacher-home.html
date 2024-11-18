@@ -76,7 +76,7 @@
         font-weight: bold;
       }
     </style>
-
+    <script src="scripts/verif.js"></script>
     <!-- =======================================================
   * Template Name: Mentor
   * Template URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/
@@ -102,56 +102,54 @@
             <li>
               <a id="a1" href="teacher-home.html" class="active">Home<br /></a>
             </li>
-            <li><a id="a1" href="notes.html">Notas</a></li>
+            <li><a href="#alunos" class="button">Cadastrar alunos</a></li>
+            <li><a href="#notas" class="button">Lançar Notas</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
       </div>
     </header>
 
-    <main>
+    <main id="alunos">
       <h1 class="text-center">Olá professor(a), seja bem-vindo!</h1>
 
-      <div class="menu">
-        <a href="#" class="button">Cadastrar alunos</a>
-        <a href="#" class="button">Lançar Notas</a>
-      </div>
+     
 
-      <div class="text-center">
-        <h2>Cadastro de alunos:</h2>
+      <div class="text-center" ">
+        <h2 >Cadastro de alunos:</h2>
 
         <div class="mb-3">
-          <label for="nome" class="form-label">Nome do aluno</label>
+          <label for="nome" class="form-label">Nome do aluno:</label>
 
           <input
             type="text"
             class="form-control"
-            id="nome"
+            id="nome2"
             placeholder="Digite o nome do aluno"
           />
           <span id="erro-nome" style="display: none">Erro</span>
         </div>
 
         <div class="mb-3">
-          <label for="email" class="form-label">E-mail do aluno</label>
+          <label for="email" class="form-label">E-mail do aluno:</label>
           <input
             type="email"
             class="form-control"
-            id="email"
+            id="email2"
             placeholder="Digite o e-mail do aluno"
           />
           <span id="erro-email" style="display: none">Erro</span>
         </div>
 
         <div class="mb-3">
-          <label for="telefone" class="form-label">RA:</label>
+          <label for="ra2" class="form-label">RA:</label>
           <input
             type="tel"
             class="form-control"
-            id="telefone"
+            id="ra2"
             placeholder="Digite o RA: do aluno"
           />
-          <span id="erro-telefone" style="display: none">Erro</span>
+          <span id="erro-ra2" style="display: none">Erro</span>
         </div>
 
 
@@ -187,7 +185,7 @@
             <label for="9ano">3º Colegial</label>
           </div>
 
-          <span id="erro-nome" style="display: none">Erro</span>
+          <span id="erro-radio" style="display: none">Erro</span>
         </div>
 
       </div>
@@ -195,26 +193,38 @@
 
 
 
-
-      
-        <div class="mb-3">
-            <label for="ra" class="form-label">RA:</label>
-            <input type="number" class="form-control" id="ra" placeholder="00000000000" min="1">
-        </div>
-        <div class="mb-3">
-            <label for="disciplina" class="form-label">Código da disciplina</label>
-            <input type="number" class="form-control" id="disciplina" placeholder="00000000000" min="1">
-        </div>
-        <div class="mb-3">
-            <label for="nota" class="form-label">Nota</label>
-            <input type="number" class="form-control" id="nota" placeholder="0" min="0" step="any">
-        </div>
-
-        <button type="button" class="btn btn-success">Enviar dados</button>
+          <div class="text-center">
+            <div class="mb-3">
+              <h2 id="notas">Lançar notas:</h2>
+              <div>
+                  <label for="ra" class="form-label">RA:</label>
+                  <input type="number" class="form-control" id="raN" placeholder="Digite o RA do aluno">
+                  <span id="raN1" style="display: none">Erro</span>
+                  <span id="raN2" style="display: none">Erro</span>
+              </div>
+              <div >
+                  <label for="disciplina" class="form-label">Código da disciplina:</label>
+                  <input type="number" class="form-control" id="disciplina" placeholder="Digite o codigo da disciplina">
+                  <span id="erro-cod" style="display: none">Erro</span>
+              </div>
+              <div>
+                  <label for="nota" class="form-label">Nota:</label>
+                  <input type="number" class="form-control" id="nota" placeholder="Digite a nota">
+                  <span id="erro-nt" style="display: none">Erro</span>
+              </div>
+            </div>
+          </div>
+        <button type="button" onclick="limparF2(event)" class="btn btn-success   text-center" style="background-color: #dc3545;" >Limpar formulario</button>  
+        <button type="button" onclick="validar2()" class="btn btn-success   text-center"  >Enviar dados</button>
         
+
+        <span   id="sucesso" style="display: none;"></span>
+
+
         <div class="text-center">
             <h2>Banco de dados:</h2>
             <span id="erro-tabela">Nenhum aluno foi cadastrado:</span>
+        </div>
 
 
     </main>
@@ -229,6 +239,6 @@
 
     <!-- Main JS File -->
 
-    <script src="scripts/verif.js"></script>
+    
   </body>
 </html>

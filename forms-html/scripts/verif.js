@@ -269,3 +269,184 @@ function login()
 
 
 }
+
+var vAlunos = [
+
+]
+
+function validar2()
+{
+  //alunos
+  let vNome = document.getElementById('nome2').value
+  let vEmail = document.getElementById('email2').value
+  let vRa = document.getElementById('ra2').value
+  let check = document.getElementsByName('serie')
+
+
+  //notas
+  let Nra = document.getElementById('raN').value
+  let cod = document.getElementById('disciplina').value
+  let nota = document.getElementById('nota').value
+  correto = true
+  
+
+  //valida o radio
+  for(let i in check)
+  {
+    if(!check[i].checked)
+    {
+      let mensagem = document.getElementById('erro-radio')
+      mensagem.style.display = 'flex'
+      mensagem.style.color = 'red'
+      mensagem.innerText = 'Pelo menos um campo deve estar selecionado'
+      correto = false 
+    }
+  }
+
+  for(let i in check)
+  {
+    if(check[i].checked)
+      {
+        let mensagem = document.getElementById('erro-radio')
+        mensagem.style.display = 'none'
+        correto = true
+      }
+  }
+
+  
+
+   //valida nome
+   if(vNome.trim() == '' || vNome.length < 10)
+    {
+      let mensagem = document.getElementById('erro-nome')
+      mensagem.style.display = 'Flex'
+      mensagem.innerText = 'Seu nome está vazio ou possui menos que 10 caracteres'
+      mensagem.style.color = 'red'
+      correto = false
+    }
+    else
+    {
+      let mensagem = document.getElementById('erro-nome')
+      mensagem.style.display = 'none'
+    }
+
+    //valida email
+  if(vEmail == ' ' || !vEmail.includes('@') || !vEmail.includes('.'))
+    {
+      let mensagem = document.getElementById('erro-email')
+      mensagem.style.display = 'Flex'
+      mensagem.innerText = 'Seu email está vazio, ou deve possuir um @ e um .'
+      mensagem.style.color = 'red'
+      correto = false
+    }
+    else
+    {
+      let mensagem = document.getElementById('erro-email')
+      mensagem.style.display = 'none'
+    }
+
+  //valida ra
+  if(vRa.trim() == '' || vRa.length < 11)
+  {
+    let mensagem = document.getElementById('erro-ra2')
+      mensagem.style.display = 'Flex'
+      mensagem.innerText = 'Seu ra está vazio, ou deve possuir onze 11 caracteres.'
+      mensagem.style.color = 'red'
+      correto = false
+  }
+  else
+  {
+    let mensagem = document.getElementById('erro-ra2')
+      mensagem.style.display = 'none'
+  }
+
+  //valida ra nota
+  if(Nra == ' ' || Nra.length < 11)
+  {
+    let mensagem = document.getElementById('raN1')
+    mensagem.style.display = 'flex'
+     mensagem.innerText = 'Seu ra está vazio, ou deve possuir onze 11 caracteres,'
+    mensagem.style.color = 'red'
+    correto = false
+   
+  }
+  else
+  {
+    let mensagem = document.getElementById('raN1')
+    mensagem.style.display = 'none'
+    
+  }
+  if(Nra != vRa)
+  {
+    let mensagem = document.getElementById('raN2')
+    mensagem.style.display = 'flex'
+    mensagem.innerText = 'Os RA não conhecidem'
+    mensagem.style.color = 'red'
+    correto = false
+     
+  }
+  else
+  {
+    let mensagem = document.getElementById('raN2')
+    mensagem.style.display = 'none'
+  }
+
+  //valida disciplina
+  if(cod = '' || cod.length < 11)
+  {
+    let mensagem = document.getElementById('erro-cod')
+    mensagem.style.display = 'flex'
+    mensagem.innerText = 'Seu codigo está vazio, ou ele deve possuir 11 caracteres'
+    mensagem.style.color = 'red'
+    correto = false
+  }
+  else
+  {
+    let mensagem = document.getElementById('erro-cod')
+    mensagem.style.display = 'none'
+  }
+
+  if(nota < 0 || nota == '' || nota >10)
+  {
+    let mensagem = document.getElementById('erro-nt')
+    mensagem.style.display = 'flex'
+    mensagem.innerText = 'Sua nota esta vazia ou deve ser um valor positivo ou maior que 10'
+    mensagem.style.color = 'red'
+    correto = false
+  }
+  else
+  {
+    let mensagem = document.getElementById('erro-nt')
+    mensagem.style.display = 'none'
+  }
+
+
+  //correto = true
+  if(correto == true)
+  {
+    let sucesso = document.getElementById('sucesso')
+    sucesso.style.display = 'flex'
+    sucesso.style.fontSize = '16px'
+    sucesso.style.paddingLeft = '42.2%'
+    sucesso.innerText = 'As informações foram cadastradas!'
+  }
+
+  
+
+}
+
+function limparF2(event)
+{
+  event.preventDefault()
+  //alunos
+  document.getElementById('nome2').value = ''
+  document.getElementById('email2').value= ''
+  document.getElementById('ra2').value= ''
+  document.getElementsByName('serie').value = ''
+
+
+  //notas
+  document.getElementById('raN').value= ''
+  document.getElementById('disciplina').value= ''
+  document.getElementById('nota').value= ''
+}
