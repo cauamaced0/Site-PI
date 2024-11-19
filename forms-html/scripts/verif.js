@@ -211,7 +211,7 @@ function login()
     {
       let mensagem = document.getElementById('erro-email')
       mensagem.style.display = 'Flex'
-      mensagem.innerText = 'Seu email está vazio, ou deve possuir um @ e um .'
+      mensagem.innerText = 'Seu email está vazio, ou nao possui um @ ou  .'
       mensagem.style.color = 'red'
       correto = false
     }
@@ -227,7 +227,7 @@ function login()
   {
     let mensagem = document.getElementById('erro-senha')
     mensagem.style.display = 'flex'
-    mensagem.innerText ='Sua senha deve ser mais que 8 caracteres, e deve possuir pelo menos um numero e caractere especial'
+    mensagem.innerText ='Sua senha deve possuir no minimo 8 caracteres, e deve possuir pelo menos um numero e um caractere especial'
     mensagem.style.color = 'red'
     correto=false
 
@@ -267,7 +267,77 @@ function login()
     window.location = "teacher-home.html"
   }
 
+  
 
+}
+
+function login2()
+{
+  let email = document.getElementById('email').value
+  let senha = document.getElementById('senha').value
+  let nome = document.getElementById('nome').value
+  let correto = true
+
+  //valida email
+  if(email == ' ' || !email.includes('@') || !email.includes('.'))
+    {
+      let mensagem = document.getElementById('erro-email')
+      mensagem.style.display = 'Flex'
+      mensagem.innerText = 'Seu email está vazio, ou nao possui um @ ou  .'
+      mensagem.style.color = 'red'
+      correto = false
+    }
+    else
+    {
+      let mensagem = document.getElementById('erro-email')
+      mensagem.style.display = 'none'
+    }
+
+  //valida senha 
+  let regex =/(?=^.{8,}$)((?=.*\d)(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/g
+  if(!regex.test(senha))
+  {
+    let mensagem = document.getElementById('erro-senha')
+    mensagem.style.display = 'flex'
+    mensagem.innerText ='Sua senha deve possuir no minimo 8 caracteres, e deve possuir pelo menos um numero e um caractere especial'
+    mensagem.style.color = 'red'
+    correto=false
+
+    let mensagem2 = document.getElementById('erro-senha2')
+    mensagem2.innerText = 'Exemplo: Banana456-'
+    mensagem2.style.display = 'flex'
+    mensagem2.style.color = 'red'
+  
+    
+  }
+  else
+  {
+    let mensagem = document.getElementById('erro-senha')
+    mensagem.style.display= 'none'
+
+    let mensagem2 = document.getElementById('erro-senha2')
+    mensagem2.style.display= 'none'
+
+  }
+  //valida nome
+  if(nome.trim() == '' || nome.length < 10)
+    {
+      let mensagem = document.getElementById('erro-nome')
+      mensagem.style.display = 'Flex'
+      mensagem.innerText = 'Seu nome está vazio ou possui menos que 10 caracteres'
+      mensagem.style.color = 'red'
+      correto = false
+    }
+    else
+    {
+      let mensagem = document.getElementById('erro-nome')
+      mensagem.style.display = 'none'
+    }
+  
+  if(correto==true)
+  {
+    window.location = "Area_Aluno.html"
+  }
 }
 
 var vAlunos = [
